@@ -6,7 +6,11 @@
       Title<input type="text" v-model="newMovieTitle"></input>
       Year<input type="integer" v-model="newMovieYear"></input><br>
       Plot<textarea rows ="4" cols="40" v-model="newMoviePlot"></textarea><br>
-      <input type="submit" class="btn btn-primary" value="Create Movie">
+      <small class="text-danger" v-if="newMoviePlot.length < 200"> {{200 - newMoviePlot.length}} characters remaining.</small>
+      
+    
+      <input type="submit" v-if="newMoviePlot.length < 201" class="btn btn-primary" value="Create Movie">
+      <small class="text-danger" v-if="newMoviePlot.length > 200">Plot must not exceed 200 characters.</small>
     </form>
 
   </div>
