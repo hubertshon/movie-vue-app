@@ -1,7 +1,7 @@
 <template>
   <div class="signup">
     <form v-on:submit.prevent="submit()">
-      <h1>Signup</h1>
+      <h2>Signup</h2>
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul>
@@ -26,6 +26,20 @@
   </div>
 </template>
 
+<style scoped>
+.signup {
+  margin: 5em;
+  padding: 2em;
+}
+.form-group {
+  margin: 1em auto 1em auto;
+}
+
+h2 {
+  font-size: 2em;
+  color: darkslategray;
+}
+</style>
 <script>
 import axios from "axios";
 

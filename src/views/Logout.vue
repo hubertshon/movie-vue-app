@@ -4,6 +4,13 @@
   </div>
 </template>
 
+<style scoped>
+.logout {
+  text-align: center;
+  font-size: 2em;
+  height: 12em;
+}
+</style>
 <script>
 import axios from "axios";
 

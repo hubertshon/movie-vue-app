@@ -1,38 +1,31 @@
 <template>
   <div class="home">
-    <h1>{{ message }}</h1>
+    <h2>{{ message }}</h2>
+    <p>This is the movie app for Actualize</p>
 
-    <form>
-      Title<input type="text" v-model="newMovieTitle"></input>
-      Year<input type="integer" v-model="newMovieYear"></input><br>
-      Plot<textarea rows ="4" cols="40" v-model="newMoviePlot"></textarea><br>
-      <button v-on:click="createMovie()">New Movie</button>
-    </form>
-
-    <div v-for="movie in movies">
-      <h3>Title: {{ movie.title }}</h3>
-      <p>Year: {{ movie.year }}</p>
-      <p>Plot: {{ movie.plot }}</p>
-      <button v-on:click="showMovie(movie)">More Info</button>
-    </div>
-
-    <dialog id="movie-details">
-      <p>Name: <input type="text" v-model="currentMovie.title"></p>
-      <p>Year: <input type="text" v-model="currentMovie.year"></p>
-      <p>Plot: <input type="text" v-model="currentMovie.plot"></p>
-      <p>Genre: {{ currentMovie.genre }}</p>
-      <button v-on:click="updateMovie(currentMovie)">Update</button>
-      <button v-on:click="deleteMovie(currentMovie)">Delete Movie</button>
-    </dialog>
   </div>
 </template>
+<style scoped>
+.home {
+  padding: 7em;
+  margin-bottom: 170px;
+  text-align: center;
+}
+
+.home h2 {
+  font-size: 1.5em;
+  color: darkslategray;
+  line-height: 9vh;
+}
+</style>
+
 
 <script>
 import axios from "axios";
 export default {
   data: function() {
     return {
-      message: "Movie Vue App",
+      message: "Movies!",
       movies: [],
       newMovieTitle: "",
       newMovieYear: "",

@@ -3,7 +3,12 @@
     <p> {{message}} </p>
   </div>
 </template>
-
+<style scoped>
+.confirm-signup {
+  text-align: center;
+  height: 7em;
+}
+</style>
 <script>
 import axios from "axios";
 
